@@ -21,7 +21,8 @@ Route::prefix('api')->group(function (){
     
     // Users routes
     Route::post('user/create', [UsersController::class, 'create']);
-    Route::get('user/emailvalidate',  [UsersController::class, 'emailValidate'])->name('email.validate');
+    Route::put('user/update/{id}',  [UsersController::class, 'update']);
+    Route::get('user/validate',  [UsersController::class, 'emailValidate'])->name('email.validate');
 
     // Contacts routes
     Route::post('contact/create', [ContactsController::class, 'create']);

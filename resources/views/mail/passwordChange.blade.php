@@ -26,14 +26,12 @@
                                 cellspacing="0" width="100%">
                                 <tr>
                                     <td style="font-size: 18px;">
-                                        <h1 style="font-size: 28px; text-align:center;">Confirm your account</h1>
+                                        <h1 style="font-size: 28px; text-align:center;">Password changed</h1>
                                         <br />
-                                        <h5>Token:</h5>
-                                        <code>{!! $token !!}</code>
-                                        <br />
-                                        <br />
-                                        <h5>Confirmation link:</h5>
-                                        <code>{!! $link !!}</code>
+                                        Hi <b>{{ $name }}</b>.
+                                        <p>Your account's password has been changed. 
+                                        If do not recognize this action get in touch 
+                                        with our support team.</p>                                        
                                         <br />
                                         <br />
                                     <td>

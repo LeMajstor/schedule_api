@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendEmailValidation extends Mailable
+class SendPassChangeEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,14 +16,12 @@ class SendEmailValidation extends Mailable
      *
      * @return void
      */
+    
+    public $name;
 
-    public $token;
-    public $link;
-
-    public function __construct($token, $link)
+    public function __construct($name)
     {
-        $this->token = $token;
-        $this->link = $link;
+        $this->name = $name;
     }
 
     /**
@@ -33,9 +31,8 @@ class SendEmailValidation extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.validation', [
-            'token' => $this->token,
-            'link' => $this->link
-        ]);
+        return $this->view('mail.passwordChange', [
+            'name' => $this->name,
+        ]);    
     }
 }
